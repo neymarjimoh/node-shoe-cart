@@ -66,9 +66,10 @@ app.use(cookieParser());
 
 // Session 
 app.use(session({
-  secret: process.env.SESSION_KEY,
-  resave: false, 
-  saveUninitialized: false,
+  // secret: process.env.SESSION_KEY,
+  secret: 'mysupersecret',
+  resave: true, 
+  saveUninitialized: true,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
   cookie: { maxAge: 180 * 60 * 1000 }
 }))
