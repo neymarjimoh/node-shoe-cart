@@ -66,7 +66,8 @@ app.use(cookieParser());
 
 // Session 
 app.use(session({
-  secret: process.env.SESSION_KEY,
+  // secret: process.env.SESSION_KEY,
+  secret: mysupersecret,
   resave: false, 
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
