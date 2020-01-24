@@ -1,0 +1,253 @@
+
+.card img {
+  max-height: 150px;
+}
+
+.card img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.card .card-body .icon {
+  color: gold;
+}
+
+div.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+div.card:hover {
+  border: 1px solid #777;
+}
+
+li.list-group-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+li.list-group-item:hover {
+  border: 1px solid #777;
+}
+
+.dropdown-menu {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+ .price {
+   font-weight: bold;
+}
+
+.color-orange {
+  color: orange;
+  font-weight: bold;
+}
+
+input {
+  width: 30%;
+  padding-left: 3px;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.mt-auto, .my-auto {
+  margin-top: auto!important;
+}
+.pb-3, .py-3 {
+  padding-bottom: 1rem!important;
+}
+.pt-3, .py-3 {
+  padding-top: 1rem!important;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.text-muted {
+  margin-left: 50%;
+}
+
+.error-page-text {
+  text-align: center;
+}
+
+footer {
+  display: block;
+}
+
+.footer {
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+h1.login-header {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+p.login-bottom {
+  margin-top: 2rem;
+}
+
+
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.button-warning {
+  border: 2px solid orange;
+  background-color: white;
+  color: black;
+  /* padding: 14px 28px; */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  height: 3.125rem;
+  padding: .75rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-label-group > label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+.custom-buttom {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.custom-color {
+  color: orangered;
+}
+
+.color-quantity-profile {
+  color: orange;
+  font-weight: bold;
+}
+
+.order-h2 {
+  padding: 10px;
+}
+
+.panel-footer {
+  margin-bottom: 15px;
+}
+
+.profile-price-color {
+  color: orangered;
+}
+
+.profile-rule {
+  border: 2px dashed green;
+  border-bottom: 0;
+  text-align: center;
+  width: 5%;
+  margin-bottom: 35px;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin-left: 10%;
+    padding: 5px;
+  }
+  .card {
+    width: 70%;
+    margin-top: 25px;
+  }
+  .custom-alert {
+    width: 80%;
+  }
+  .form-label-group input {
+    width: 80%;
+  }
+  .continue-shop {
+    margin-bottom: 10px;
+  }
+}

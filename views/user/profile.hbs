@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1 class="login-header">User Profile</h1>
+        <hr>
+        <h2 class="order-h2">My Orders</h2>
+        {{# each orders}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        {{# each this.items }}
+                            <li class="list-group-item">
+                                <span class="badge custom-color"> ${{ this.price}} </span>
+                                <span class="offset-md-3">
+                                    {{ this.item.name }}
+                                </span>  
+                                <span class="offset-md-3 color-quantity-profile"> {{ this.qty }} Unit(s)</span>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <br>
+                <div class="panel-footer">
+                    <strong>Total Price: <span class="profile-price-color"> ${{ this.cart.totalPrice }}</span></strong>
+                </div>
+                <hr class="profile-rule">
+            </div>   
+        {{/each}}
+        <a href="/"><button class="btn warning button-warning offset-md-6 continue-shop">Continue shopping</button></a>
+    </div>
+</div>

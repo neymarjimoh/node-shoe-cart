@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h1 class="login-header">Sign Up</h1>
+        {{# if messages.error}}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong>Sorry!</strong>
+                {{messages.error}}
+            </div>
+        {{/if}}
+        <form action="/user/signup" method="post">
+            {{!-- <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter name here...">
+            </div> --}}
+
+            {{!-- <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter email here..." required>
+            </div> --}}
+            <div class="form-label-group">
+                <input type="text" id="inputName" class="form-control" placeholder="Enter full name" name="name" required>
+                <label for="inputName">Full Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" name="email" required>
+                <label for="inputEmail">E-mail</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="password" id="inputPass" class="form-control" placeholder="Password" name="password" required>
+                <label for="inputPass">Password</label>
+            </div>
+
+             {{!-- <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password here..." required>
+            </div> --}}
+            {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
+            <button type="submit" class="btn btn-success">Sign Up</button>
+            
+            <p class="login-bottom">Already have an account. <a href="/user/signin">Login here</a></p>
+        </form>
+    </div>
+</div>

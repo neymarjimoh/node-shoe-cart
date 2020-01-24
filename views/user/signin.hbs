@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-4  offset-md-4">
+        <h1 class="login-header">Login</h1>
+        {{# if messages.error}}
+            <div class="alert alert-danger alert-dismissible fade show custom-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong>Oops!</strong> You should check in on some of those fields below.
+                <strong>{{messages.error}}</strong>
+            </div>
+        {{/if}}
+        <form action="/user/signin" method="post">
+            {{!-- <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div> --}}
+             {{!-- <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div> --}}
+
+            <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" name="email" required>
+                <label for="inputEmail">E-mail</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                <label for="inputPassword">Password</label>
+            </div>
+            {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
+            <button type="submit" class="btn btn-success">Sign In</button>
+
+            <p class="login-bottom">Don't have an account. <a href="/user/signup">Register here</a></p>
+
+
+
+        </form>
+    </div>
+</div>

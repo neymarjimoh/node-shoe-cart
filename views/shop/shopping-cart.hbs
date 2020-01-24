@@ -1,0 +1,72 @@
+<br>
+{{# if products }}
+<div class="row">
+    <div class="col-sm-6 col-md-6 offset-md-3">
+        <ul class="list-group">
+            {{# each products }}
+            <br>
+                <li class="list-group-item">
+                    
+                    <strong>{{this.item.name}}</strong>
+                    <span class="label label-success offset-md-3  custom-color"> <b>Price: ${{this.price}}</b></span>
+                    <span class="badge badge-pill badge-secondary offset-md-2">{{this.qty}}</span>
+                    <br><br>
+         
+                    <div class="btn-group">
+                        <a href="/reduce/{{this.item._id}}"><button type="button" class="btn warning button-warning"> <i class="fas fa-minus"></i> Reduce </button></a>
+                        <a href="/increase/{{this.item._id}}"><button type="button" class="btn warning button-warning">
+                        <i class="fas fa-plus"></i> Add</button></a>
+                        
+                    </div> 
+                    
+                    <a name="remove" id="" class="btn btn-danger offset-md-2" href="/remove/{{this.item._id}}" role="button"> <i class="far fa-trash-alt"></i> Delete </a>
+                </li> 
+            {{/each}}  
+        </ul>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-6 offset-md-3">
+        <strong>Total: ${{ totalPrice }}</strong>
+    </div>
+</div>
+<hr>
+{{!-- <div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+    </div>
+</div> --}}
+
+<div class="row">
+    <div class="col-md-12">
+    <a href="/"><button class="btn warning button-warning offset-md-6 continue-shop">Continue shopping</button></a>
+
+    <form action="/charge" method="post">
+        <script
+        src="https://checkout.stripe.com/v2/checkout.js",
+        class="stripe-button offset-md-6"
+        data-key="pk_test_bC4JUE9h5kAzbN6WXalDWvgY00P9vrAwzG"
+        data-name = "Jim Rid"
+        data-description="Fill card details"
+        data-locale="auto"
+        data-amount="{{ total }}"
+        >
+
+    </script>
+    
+    </form>
+
+    </div>
+</div>
+
+
+    {{ else }}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 offset-md-4">
+                <br>
+                <h2>No Items in Cart</h2>
+            </div>
+        </div>
+{{/if}}
+
