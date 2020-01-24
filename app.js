@@ -2,6 +2,10 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
+if (process.env.NODE_ENV === 'production') {
+  require('dotenv').config()
+}
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
