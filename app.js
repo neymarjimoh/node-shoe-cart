@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 if (process.env.NODE_ENV === 'production') {
   require('dotenv').config()
-  app.set('trust proxy', 1)
 }
 
 var createError = require('http-errors');
@@ -64,6 +63,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
+app.set('trust proxy', 1)
+
 
 // Session 
 app.use(session({
