@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 if (process.env.NODE_ENV === 'production') {
   require('dotenv').config()
+  app.set('trust proxy', 1)
 }
 
 var createError = require('http-errors');
