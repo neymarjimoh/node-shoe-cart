@@ -66,12 +66,12 @@ app.use(cookieParser());
 
 // Session 
 app.use(session({
-  // secret: process.env.SESSION_KEY,
-  secret: 'mysupersecret',
+  secret: process.env.SESSION_KEY,
+  // secret: 'mysupersecret',
   resave: false, 
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  cookie: { maxAge: 180 * 60 * 1000 }
+  cookie: { maxAge: 180 * 60 * 1000, secure: true }
 }))
 
 // Connect flash and setting up passport
