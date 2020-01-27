@@ -63,10 +63,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+}
 
 // Session 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret:'secret',
   resave: false, 
   saveUninitialized: true,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
