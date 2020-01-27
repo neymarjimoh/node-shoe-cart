@@ -21,17 +21,20 @@ var userRouter = require('./routes/user');
 
 // Database connection
 mongoose.connect(
-    'mongodb+srv://neymarjimoh:' +
-    process.env.MONGO_ATLAS_PW +
-    '@cluster0-xjpod.mongodb.net/test?retryWrites=true&w=majority',
-    { useNewUrlParser: true ,
-      useUnifiedTopology: true
-    }
+  'mongodb+srv://test:test@cluster0-xjpod.mongodb.net/test?retryWrites=true&w=majority',
+  { useNewUrlParser: true , useUnifiedTopology: true}, (err, connection) => {
+    if(err) {
+      console.error(err)
+      return
+      }    
+    console.log('Connected to DB');
+  }
 )
 //Get the default connection
-var db = mongoose.connection;
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// var db = mongoose.connection;
+// //Bind connection to error event (to get notification of connection errors)
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 
 // Local Database Mongoose Connection..
@@ -59,17 +62,18 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.set('trust proxy', 1)
 
 
 // Session 
 app.use(session({
-  secret: process.env.SESSION_KEY,
-  // secret: 'mysupersecret',
+  secret: process.env.SESSION_SECRET,
   resave: false, 
-  saveUninitialized: false,
+  saveUninitialized: true,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  cookie: { maxAge: 180 * 60 * 1000, secure: true }
+  cookie: {
+    maxAge: 180 * 60 * 1000,
+    secure: true
+  }
 }))
 
 // Connect flash and setting up passport
